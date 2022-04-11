@@ -1,4 +1,6 @@
-OpenBLAS wheel builder
+Cryptography wheel builder
 ======================
 
-Packages OpenBLAS in a wheel for installation on the RoboRIO
+Packages Cryptography in a wheel for installation on the RoboRIO
+
+Based on roborio-OpenBLAS
