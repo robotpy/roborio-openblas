@@ -1,5 +1,5 @@
 name = "robotpy-openblas"
-version = "0.3.19+r1"
+version = "0.3.21+r1"
 url = "https://www.openblas.net"
 license = "BSD"
 install_requires = ["robotpy-libgfortran4"]
