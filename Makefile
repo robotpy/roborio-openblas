@@ -1,12 +1,12 @@
 
-VERSION = 0.3.21
+VERSION = 0.3.24
 
 BINRELEASE = https://github.com/xianyi/OpenBLAS/releases/download/v$(VERSION)/OpenBLAS-$(VERSION).tar.gz
 LIBGZIP = $(abspath $(notdir ${BINRELEASE}))
 SRCDIR = OpenBLAS-$(VERSION)
 
-FC=arm-frc2023-linux-gnueabi-gfortran
-CC=arm-frc2023-linux-gnueabi-gcc
+FC=arm-frc2024-linux-gnueabi-gfortran
+CC=arm-frc2024-linux-gnueabi-gcc
 
 MAKE_OPTIONS=FC=$(FC) CC=$(CC) HOSTCC=gcc \
 		TARGET=CORTEXA9 ARM_SOFTFP_ABI=1 \
