@@ -7,6 +7,7 @@ SRCDIR = OpenBLAS-$(VERSION)
 
 FC=arm-frc2024-linux-gnueabi-gfortran
 CC=arm-frc2024-linux-gnueabi-gcc
+STRIP=arm-frc2024-linux-gnueabi-strip
 
 MAKE_OPTIONS=FC=$(FC) CC=$(CC) HOSTCC=gcc \
 		TARGET=CORTEXA9 ARM_SOFTFP_ABI=1 \
@@ -36,7 +37,7 @@ package: compile
 	# create release package
 	mkdir -p data/usr/local/lib
 	cp -L prefix/usr/local/lib/libopenblas.so.0 data/usr/local/lib/libopenblas.so.0
-	roborio-gen-whl data.py data -o dist
+	roborio-gen-whl data.py data -o dist --strip $(STRIP)
 	
 	# create development package
 	mkdir -p devdata/usr/local/lib 
