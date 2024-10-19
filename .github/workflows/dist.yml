@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: wpilib/roborio-cross-ubuntu:2024-22.04-py312
+      image: wpilib/roborio-cross-ubuntu:2025-22.04-py313
 
     steps:
     - uses: actions/checkout@v2
@@ -17,13 +17,13 @@ jobs:
       run: |
         apt-get update
         apt-get install -y gcc
-        pip3.12 install -r requirements.txt
+        pip3.13 install -r requirements.txt
 
     - name: Build wheels
       run: make package
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: dist
         path: dist
@@ -35,7 +35,7 @@ jobs:
 
     steps:
     - name: Download build artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: dist
         path: dist
@@ -45,5 +45,5 @@ jobs:
       with:
         user: ${{ secrets.WPI_ARTIFACTORY_USERNAME }}
         password: ${{ secrets.WPI_ARTIFACTORY_TOKEN }}
-        repository-url: https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024-local
+        repository-url: https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2025-local
 

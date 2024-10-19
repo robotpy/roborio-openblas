@@ -1,7 +1,7 @@
 
-VERSION = 0.3.24
+VERSION = 0.3.28
 
-BINRELEASE = https://github.com/xianyi/OpenBLAS/releases/download/v$(VERSION)/OpenBLAS-$(VERSION).tar.gz
+BINRELEASE = https://github.com/OpenMathLib/OpenBLAS/releases/download/v$(VERSION)/OpenBLAS-$(VERSION).tar.gz
 LIBGZIP = $(abspath $(notdir ${BINRELEASE}))
 SRCDIR = OpenBLAS-$(VERSION)
 
